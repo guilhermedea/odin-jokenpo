@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let humanScore = 0;
+        let computerScore = 0;
+
+        for(let i = 1; i < 6; i++) {
+
+        let CPUChoice = getComputerChoice();
+        let userChoice = getUserChoice();
+        playRound (userChoice, CPUChoice);
+
+        }
+
+        alert(`The score is ${humanScore} x ${computerScore}`);
+        if (humanScore === computerScore) {
+        alert("It's a draw!");
+        } else if (humanScore > computerScore) {
+            alert("You win!")
+        } else {
+            alert("The CPU Wins!")
+        }
+
+
+
+    </script>
+</body>
+</html>
+
+<!-- comentários
+
+getComputerChoice
+Use Math.Random to generate a random number
+Create a triple IF situation branching in three choices: rock, paper and scissors.
+LOG TEST
+
+getHumanChoice
+Use a PROMPT to get the user's choice: rock, paper and scissors.
+make it case insensitive
+LOG TEST
+
+INIT players score variables with value 0
+
+PLAY ROUND
+Define parameters humanChoice and computerChoice.
+COMPARE PARAMETERS
+Console log the Winner
+Increment the humanScoore or the computerScore base on the round outcome.
+
+playGame
+5 rounds
+call playRound five times -->
+
