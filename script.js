@@ -1,3 +1,4 @@
+const result = document.querySelector("#result-container");
 
 function getComputerChoice () {
     let number = (Math.floor(Math.random() * 100) + 1);
@@ -30,25 +31,34 @@ function getUserChoice() {
 
 function playRound (humanChoice, computerChoice) {
     
+    const resultText = document.createElement("p");
+
         if (humanChoice === computerChoice) {
-            alert("It's a draw!");
+            resultText.textContent = "It's a draw!";
+            result.appendChild(resultText);
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
-            alert("The user wins! Rock beats scissors!");
+            resultText.textContent = "The user wins! Rock beats scissors!";
+            result.appendChild(resultText);
             humanScore++;
         } else if (humanChoice === "paper" && computerChoice === "rock") {
-            alert("The user wins! Paper beats rock!");
+            resultText.textContent = "The user wins! Paper beats rock!";
+            result.appendChild(resultText);
             humanScore++;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            alert("The user wins! Scissors beats paper!");
+            resultText.textContent = "The user wins! Scissors beats paper!";
+            result.appendChild(resultText);
             humanScore++;
         } else if (computerChoice === "rock" && humanChoice === "scissors") {
-            alert("The CPU wins! Rock beats scissors!");
+            resultText.textContent = "The CPU wins! Rock beats scissors!";
+            result.appendChild(resultText);
             computerScore++;
         } else if (computerChoice === "paper" && humanChoice === "rock") {
-            alert("The CPU wins! Paper beats rock!");
+            resultText.textContent = "The CPU wins! Paper beats rock!";
+            result.appendChild(resultText);
             computerScore++;
         } else if (computerChoice === "scissors" && humanChoice === "paper") {
-            alert("The CPU wins! Scissors beats paper!");
+            resultText.textContent = "The CPU wins! Scissors beats paper!";
+            result.appendChild(resultText);
             computerScore++;
         } 
 }

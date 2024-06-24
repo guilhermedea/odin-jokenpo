@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+button {
+    width: auto;
+    margin: 10px;
+    border: solid 0px black;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 15px;
+    background-color: blueviolet;
+    color: white;
+}
+
+#rock{
+    background-color:#EFD28D;
+}
+
+#paper{
+    background-color: #00AFB5;
+}
+
+#scissors{
+    background-color: #ff7700 ;
+}
+
+#choice-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: #004777;
+    width: 500px;
+
+}

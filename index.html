@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
+
+    <div id="choice-container">
+        <button onclick="playRound(rock, CPUChoice)" id="rock">Rock</button>
+        <button onclick="playRound(paper, CPUChoice)" id="paper">Paper</button>
+        <button onclick="playRound(scissors, CPUChoice)" id="scissors">Scissors</button>
+    </div>
+
+    <div id="result-container"></div>
+    <div id="final-result"></div>
+
     <script>
         let humanScore = 0;
         let computerScore = 0;
@@ -19,13 +30,22 @@
 
         }
 
-        alert(`The score is ${humanScore} x ${computerScore}`);
+        const finalContainer = document.querySelector("#final-result");
+        const finalScore = document.createElement ("p");
+        const finalResult = document.createElement ("p");
+
+       finalScore.textContent = `The score is ${humanScore} x ${computerScore}`;
+       finalContainer.appendChild(finalScore)
+
         if (humanScore === computerScore) {
-        alert("It's a draw!");
+        finalResult.textContent = "It's a draw!";
+        finalContainer.appendChild(finalResult);
         } else if (humanScore > computerScore) {
-            alert("You win!")
+            finalResult.textCoontent = "You win!";
+            finalContainer.appendChild(finalResult);
         } else {
-            alert("The CPU Wins!")
+            finalResult.textContent = "The CPU Wins!";
+            finalContainer.appendChild(finalResult);
         }
 
 
