@@ -2,6 +2,8 @@ body {
     display: flex;
     box-sizing: border-box;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 button {
@@ -13,6 +15,12 @@ button {
     border-radius: 15px;
     background-color: blueviolet;
     color: white;
+    
+}
+
+#reset-button {
+    display: none;
+    width: 150px;
 }
 
 #rock{
@@ -27,13 +35,29 @@ button {
     background-color: #ff7700 ;
 }
 
-#choice-container {
+#choice-container, #result-container, #final-score, #final-result {
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    background-color: #004777;
     width: 500px;
+    font: italic bold 1.2em "inter", sans-serif;
+    color: white;
+}
 
+#choice-container {
+    background-color: #004777;
+}
+
+#result-container {
+    background-color: #FFB703;
+}
+
+#final-score {
+    background-color: #FB8500;
+}
+
+#final-result{
+    background-color: #FB8500;
 }

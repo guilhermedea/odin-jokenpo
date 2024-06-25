@@ -10,71 +10,15 @@
 <body>
 
     <div id="choice-container">
-        <button onclick="playRound(rock, CPUChoice)" id="rock">Rock</button>
-        <button onclick="playRound(paper, CPUChoice)" id="paper">Paper</button>
-        <button onclick="playRound(scissors, CPUChoice)" id="scissors">Scissors</button>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
     </div>
 
     <div id="result-container"></div>
+    <div id="final-score"></div>
     <div id="final-result"></div>
+    <button id="reset-button">Play again</button>
 
-    <script>
-        let humanScore = 0;
-        let computerScore = 0;
-
-        for(let i = 1; i < 6; i++) {
-
-        let CPUChoice = getComputerChoice();
-        let userChoice = getUserChoice();
-        playRound (userChoice, CPUChoice);
-
-        }
-
-        const finalContainer = document.querySelector("#final-result");
-        const finalScore = document.createElement ("p");
-        const finalResult = document.createElement ("p");
-
-       finalScore.textContent = `The score is ${humanScore} x ${computerScore}`;
-       finalContainer.appendChild(finalScore)
-
-        if (humanScore === computerScore) {
-        finalResult.textContent = "It's a draw!";
-        finalContainer.appendChild(finalResult);
-        } else if (humanScore > computerScore) {
-            finalResult.textCoontent = "You win!";
-            finalContainer.appendChild(finalResult);
-        } else {
-            finalResult.textContent = "The CPU Wins!";
-            finalContainer.appendChild(finalResult);
-        }
-
-
-
-    </script>
 </body>
 </html>
-
-<!-- comentários
-
-getComputerChoice
-Use Math.Random to generate a random number
-Create a triple IF situation branching in three choices: rock, paper and scissors.
-LOG TEST
-
-getHumanChoice
-Use a PROMPT to get the user's choice: rock, paper and scissors.
-make it case insensitive
-LOG TEST
-
-INIT players score variables with value 0
-
-PLAY ROUND
-Define parameters humanChoice and computerChoice.
-COMPARE PARAMETERS
-Console log the Winner
-Increment the humanScoore or the computerScore base on the round outcome.
-
-playGame
-5 rounds
-call playRound five times -->
-
