@@ -1,12 +1,20 @@
-const result = document.querySelector("#result-container");
-const finalScoreContainer = document.querySelector("#final-score");
-const finalResultContainer = document.querySelector("#final-result");
-const finalScore = document.createElement ("p");
-const finalResult = document.createElement ("p");
+//querySelectors
+let result = document.querySelector("#result-container");
+let finalScoreContainer = document.querySelector("#final-score");
+let finalResultContainer = document.querySelector("#final-result");
+let finalScore = document.createElement ("p");
+let finalResult = document.createElement ("p");
 
+
+//button behaviour
 const resetButton = document.querySelector("#reset-button");
 resetButton.addEventListener("click", () => {
-    window.location.href=window.location.href
+    result.innerHTML = "";
+    finalScore.remove();
+    finalResult.remove();
+    roundNumber = 0;
+    humanScore = 0;
+    computerScore = 0;
 })
 
 const rockButton = document.querySelector("#rock");
@@ -25,11 +33,12 @@ scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice());
 })
 
-
+//global variables
 let humanScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
 
+//functions
 function showResetButton () {
     resetButton.style.display = "block";
 }
@@ -66,55 +75,48 @@ function getUserChoice() {
 function playRound (humanChoice, computerChoice) {
 
     if (roundNumber < 5) {
-   
-            const resultText = document.createElement("p");
+
+        let resultText = document.createElement("p");
 
                 if (humanChoice === computerChoice) {
                     resultText.textContent = "Woooah!, it's a draw! Keep going!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                 } else if (humanChoice === "rock" && computerChoice === "scissors") {
                     resultText.textContent = "The user wins! Rock beats scissors!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                     humanScore++;
                 } else if (humanChoice === "paper" && computerChoice === "rock") {
                     resultText.textContent = "The user wins! Paper beats rock!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                     humanScore++;
                 } else if (humanChoice === "scissors" && computerChoice === "paper") {
                     resultText.textContent = "The user wins! Scissors beats paper!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                     humanScore++;
                 } else if (computerChoice === "rock" && humanChoice === "scissors") {
                     resultText.textContent = "The CPU wins! Rock beats scissors!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                     computerScore++;
                 } else if (computerChoice === "paper" && humanChoice === "rock") {
                     resultText.textContent = "The CPU wins! Paper beats rock!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                     computerScore++;
                 } else if (computerChoice === "scissors" && humanChoice === "paper") {
                     resultText.textContent = "The CPU wins! Scissors beats paper!";
                     console.log("It worked!")
                     result.appendChild(resultText);
-                    result.appendChild(document.createElement("br"));
                     roundNumber++
                     computerScore++;
                 } 
